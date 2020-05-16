@@ -137,15 +137,17 @@ Instalar pacote:
 yarn add webpack-dev-server -D
 ```
 No arquivo de `webpack.config.js` adicionar o seguinte propriedade
-```
-
+```js
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+  },
 ```
 `contentBase` é o caminho onde contém o diretório público da nossa aplicação
 Agora rodar no terminal:
 ```
 yarn webpack-dev-server --mode development
 ```
-Agora o projeto já está rodando em (http://localhost:8080)[http://localhost:8080] e está _Live reloading enabled_, ou seja, já está atualizando o browser assim que as alterações no código são salvas.
+Agora o projeto já está rodando em [http://localhost:8080] e está _Live reloading enabled_, ou seja, já está atualizando o browser assim que as alterações no código são salvas.
 
 ## Componentização
 Limpamos os arquivos dentro da pasta `src`
